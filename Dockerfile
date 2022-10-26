@@ -4,5 +4,5 @@ COPY website /var/www/html/
 
 RUN apt update && \
     apt install -y php
-
-CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
+EXPOSE 80
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]

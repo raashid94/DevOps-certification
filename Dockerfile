@@ -1,5 +1,4 @@
-FROM devopsedu/webapp:latest
-COPY website /var/www/html/
-RUN apt-get update && apt install -y php
-EXPOSE 80
-CMD /usr/sbin/apache2 -D FOREGROUND
+FROM devopsedu/webapp 
+ADD proj /var/www/html
+RUN rm /var/www/html/index.html
+CMD apachectl -D FOREGROUND
